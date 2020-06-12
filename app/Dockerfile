@@ -14,4 +14,5 @@ RUN pip install -r requirements.txt
 EXPOSE 5000
 
 # Start the app
-CMD ["gunicorn", "app:app", "--bind", "0.0.0.0:5000"]
+# CMD ["gunicorn", "app:app", "--bind", "0.0.0.0:5000"]
+CMD ["waitress-serve", "app:app", "--listen", "127.0.0.1:5000"]

@@ -31,7 +31,8 @@ def get_model_data(feature_names):
 
 def build_dataframe(data):
     """Build dataframe to facilitate cleaning."""
-    df = pd.DataFrame(data.data, columns=data.feature_names)
+    df = pd.DataFrame(data.data,
+                      columns=data.feature_names)
     df['target'] = data.target
     return df
 
