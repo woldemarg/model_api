@@ -6,7 +6,7 @@ import pickle
 import numpy as np
 
 # Import from model_api/app/features.py.
-from app.features import FEATURES
+from features import FEATURES
 
 
 # Initialize the app and set a secret_key.
@@ -14,7 +14,7 @@ app = Flask(__name__)
 app.secret_key = 'my_secret'
 
 # Load the pickled model.
-MODEL = pickle.load(open('app/model.pkl', 'rb'))
+MODEL = pickle.load(open('model.pkl', 'rb'))
 
 
 @app.route('/')
@@ -60,4 +60,4 @@ def parse_args(request_dict):
 
 
 if __name__ == '__main__':
-    app.run(port=5000)
+    app.run(host="0.0.0.0", port=5000, debug=True)
